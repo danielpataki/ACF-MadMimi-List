@@ -140,6 +140,27 @@ class acf_field_madmimi_audience_list extends acf_field {
 	</td>
 </tr>
 
+
+<tr class="field_option field_option_<?php echo $this->name; ?>">
+	<td class="label">
+		<label><?php _e("Allow Null",'acf-madmimi_audience_list'); ?></label>
+	</td>
+	<td>
+		<?php
+
+		do_action('acf/create_field', array(
+			'type'		=>	'true_false',
+			'name'		=>	'fields['.$key.'][allow_null]',
+			'value'		=>	$field['allow_null'],
+			'layout'	=>	'horizontal',
+			'message'     => __('Allow no value to be selected', 'acf-madmimi_audience_list' )
+		));
+
+		?>
+	</td>
+</tr>
+
+
 		<?php
 
 	}
@@ -163,6 +184,11 @@ class acf_field_madmimi_audience_list extends acf_field {
 		$name = ( !empty( $field['multiple'] ) ) ? esc_attr($field['name']) . '[]' : esc_attr($field['name']);
 
 		echo '<select '.$multiple.' name="'.$name.'">';
+
+		if( !empty( $field['allow_null'] ) ) {
+			echo '<option value="">' . __( 'No List Selected', 'acf-madmimi_audience_list' ) . '</option>';
+		}
+		
 		foreach( $this->madmimi_lists as $list ) {
 			$selected = ( (is_array( $field['value'] ) && in_array( $list['id'], $field['value'] ) ) || ( !is_array( $field['value'] ) && $field['value'] == $list['id'] ) ) ? 'selected="selected"' : '';
 			echo '<option '.$selected.' value="'.$list['id'].'">' . $list['display_name'] . '</option>';

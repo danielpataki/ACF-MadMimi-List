@@ -40,5 +40,8 @@ Installing this plugin automatically is the easiest option. You can install the 
 
 == Changelog ==
 
+= 1.0.1 (2015.07.14)=
+* Added allow null field.
+
 = 1.0 =
 * Initial Release.
