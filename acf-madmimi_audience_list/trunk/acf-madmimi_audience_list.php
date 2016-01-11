@@ -4,7 +4,7 @@
 Plugin Name: ACF: MadMimi Audience List
 Plugin URI: http://danielpataki.com
 Description: Adds the ability to select audience lists from a dropdown, pulled straight from MadMimi via the API.
-Version: 1.0.1
+Version: 1.0.2
 Author: Daniel Pataki
 Author URI: http://danielpataki.com
 License: GPLv2 or later

@@ -191,7 +191,7 @@ class acf_field_madmimi_audience_list extends acf_field {
 		
 		foreach( $this->madmimi_lists as $list ) {
 			$selected = ( (is_array( $field['value'] ) && in_array( $list['id'], $field['value'] ) ) || ( !is_array( $field['value'] ) && $field['value'] == $list['id'] ) ) ? 'selected="selected"' : '';
-			echo '<option '.$selected.' value="'.$list['id'].'">' . $list['display_name'] . '</option>';
+			echo '<option '.$selected.' value="'.$list['id'].'">' . $list['name'] . '</option>';
 		}
 		echo '</select>';
 	}
